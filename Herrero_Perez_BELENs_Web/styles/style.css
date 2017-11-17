@@ -1,0 +1,1084 @@
+/*Todos los elementos HTML pueden ser considerados como cajas.
+Cada caja está compuesta por márgenes, bordes, paddings y el contenido.
+
+ESTRUCTURA de la caja: - De más afuera a más adentro de la caja -
+                        • Margen
+                        • Borde
+                        • Padding
+                        • Contenido
+
+<style>
+    El MARGIN es exterior.
+    element {margin-top: 10px} Primero ponemos el nombre de la clase, del identificador, de la etiqueta...
+                               Y dentro ponemos lo que queremos hacer con el.
+                               En este caso le decimos danos un margen en la parte de arriba de 10píxeles.
+    element {margin-right: 10px} Danos un margen a la derecha de 10px.
+    element {margin-bottom: 10px} Danos un margen abajo de 10px.
+    element {margin-left: 10px} Danos un margen a la izquierda de 10px.
+    element {margin: 10px} Abreviatura de los otros márgenes en el mismo orden.
+</style>
+
+<style>
+    El PADDING es interior.
+    element {padding-top: 10px} Primero ponemos el nombre de la clase, del identificador, de la etiqueta...
+                                Y dentro ponemos lo que queremos hacer con el.
+                                En este caso le decimos danos un padding en la parte de arriba de 10píxeles.
+    element {padding-right: 10px} Danos un padding a la derecha de 10px.
+    element {padding-bottom: 10px} Danos un padding abajo de 10px.
+    element {padding-left: 10px} Danos un padding a la izquierda de 10px.
+    element {padding: 10px} Abreviatura de los otros paddings en el mismo orden.
+<s/tyle>
+
+•MARGIN vs PADDING
+- Una de las principale diferencias entre los dos, es que los márgenes superiores e inferiores "colapsan".
+- Otra diferencia es que la región del padding se influye en la zona de click.
+- También en el padding se incluye los colores e imágenes de fondo.
+
+•BORDER
+- El border, es el borde de la caja (mirar arriba para ver donde va):
+- Tenemos, border: solid, dashed, double, dotted, outset, none...
+
+<style>
+    element {border-width: 10px} // Ancho del borde del elemento.
+    element {border-style: dashed} // Establece el estilo del borde.
+    element {border-color: red} // Define el color del borde.
+    element {border: 10px dashed red} // Define todo lo anterior en orden.
+</style>
+
+•BORDER-RADIUS
+<style>
+    element {border-radius: 10px} // Nos permite definir bordes redondeados a los elementos.
+</style>
+
+
+
+•SELECTORES I
+<style>
+    .class {}   Selecciona todos los elementos con la clase 'intro'.
+    #id {}      Seleciona el elemento con el identificador '#id'.
+    * {}        Selecciona todos los elementos.
+    element {}  Hace referencia a todos los elementos de un mismo tipo (<p>, <div>, ...)
+</style>
+
+•SELECTORES II
+<style>
+    element, element {}     div, span   // Selecciona todos los elementos div y todos los span // a los dos el mismo diseño
+    element element {}      div span    // Selecciona todos los elementos span dentro de elementos div // a los span que estan dentro de div les voy a dar un diseño
+    element > element       div > span  // Selecciona todos los elementos span donde su padre es un div // a los span que su padre sea un div, le voy a dar un diseño
+    element + element       div + span  // Selecciona todos los elementos span que van a continuación div (a la misma altura) // a los span que van a continuación de un div en la misma linea, les voy a dar un diseño
+<s/tyle>
+
+
+
+•UNIDADES DE MEDIDA
+- En CSS las unidades de medida las vamos a utilizar mayormente para definir 
+  alturas, anchuras, márgenes, padding y tamaños de letra.
+- Las podemos dividir en dos partees, unidades absolutas y unidades relativas.
+- Se definen especificando un número y a continuación el tipo de unidad, sin espacios.
+
+    MEDIDA      SIGNIFICADO
+    - in        - Equivalente a pulgadas. 1 pulgada son 2,54cm.
+    - cm        - Centímetros.
+    - mm        - Milímetros.
+    - pt        - Puntos. 1 punto es 1/72 de 1 pulgada.
+    - pc        - Picas. 1 pica equivale a 12 puntos.
+    - px        - Los píxeles son relativos a la pantalla del dispositivo.
+    - em        - Medida relativa al tamaño de letra del elemento.
+    - ex        - Relativo respecto a la altura de la letra minúscula "x" del tamaño de letra del elemento.
+    - vw        - Relativo de la anchura del viewport. // sobre todo en dispositivos móviles se usa. Sería como decirle, la mitad del ancho del dispositivo.
+    - vh        - Relativo de la altura del viewport.
+    - %         - Porcentaje respecto al tamaño del elemento.
+
+
+
+•FUENTES
+- Podemos incluir nuevas fuentes de varias formas.
+- mediante la propiedad @font-face.
+    @font face {
+        font-family: miFuente;
+        src: url();
+    }
+- Importándola de webs como google fonts.
+    @import url();
+    <link href='' type='text/css'>
+
+    MEDIDA          SIGNIFICADO
+    font-style      - Define el estilo de un texto. Normal, italic, ...
+    font-variant    - Variante del tipo de letra. Normal, small-caps (todo en mayúsculas)
+    font-weight     - Peso de la letra. Normal, bold, 100, 900, ...
+    font-size       - Tamaño de la fuente.
+    font-family     - Familia de la fuente.
+    font            - Abreviatura de todas las anteriores en el mismo orden de aparición.
+
+
+
+•COLORES
+- En CSS tenemos diferentes formas de cambiar el color de nuestros elementos.
+- Una de ellas es la propiedad 'color', que nos permite cambiar el color de una fuente.
+- Otra de ellas es 'background-color', la cual nos permite cambiar el color de fondo de un elemento.
+- Y otra más es mediante 'border-color', permite cambiar el color del borde de un elemento.
+
+<style>
+    element {color: #ff0000} // color rojo.
+    element {color: rgb(255, 0, 0)} // color rojo.
+    element {color: rgba(255, 0, 0, 0, 0.3);} // color rojo con transparencia.
+</style>
+
+- Tenemos varias formas de definir colores en CSS 3.
+- Una es con códigos hexadecimales, otra con colores RGB, y otra con colores RGBA,
+  el cual nos permite definir el 'alpha' (tansparencia) de color.
+
+    DEGRADADO LINEAL
+<syle>
+    background {linear-gradiant: direction, color-stop1, color-stop2} // lineal.
+    background {radial-gradiant: color-stop1, color-stop2} // circular.
+</style>
+
+
+
+•DISPLAY
+- La propiedad display es la más importante para controlar la estructura de la web.
+- Cada elemento HTML tiene un valor por defecto.
+- Algunos elementos de 'nivel bloque' son: <div>, <h1>...<h6>, <p>, <form>, <section>
+    - display: block // Un elemento block comienza en una line ay se expande en el eje horizontal tanto como pueda.
+- Algunos elementos de 'nivel inline' son: <span>, <a>, <img>
+    - display: inline // Un elemento inline continua en la misma linea que el resto del contenido.
+                         No respeta ni márgenes ni los paddings top ni bottom.
+    -display: inline-block // Se comporta igual que un elemento inline, pero a diferencia de él, puede tener tanto width como un height.
+                              También respeta los márgenes y los paddings.
+- display: none // Ocualta el elemento sin dejar espacio en el sitio que debería cupar.
+                   Usado por algunos elementos como la etiqueta <script>
+
+
+
+•POSITION
+- Position nos permite crear estructuras más complejas en nuestros diseños.
+- Por defecto, los navegadores posicionan todos los elementos de forma automática.
+- Puede tomar los valores: static (por defecto), relative, absolute y fixed.
+    - position: static // Un elemento con este valor no está posicionado de ninguna forma especifica.
+                          Se dice que un elemento static está no posicionado.
+    - position: relative // Se trata de un posicionamiento que se basa en posicionar un elemento como si fuera 'static' y luego desplazarlo de su posición original.
+                            Este desplazamiento no afecta al resto de las cajas, por lo que puedo producir solapamientos.
+                            Podemos desplazar el elemento a través de sus propiedades top, right, bottom y left.
+    - postion: absolute // Nos va a permitir colocar un elemento en el sitio que queramos exactamente.
+                           Como referencia toma el elemento ancestro más cercano posicionado (que no sea static).
+                           Saca el elemento del flujo del resto de los elementos. Es decir, ni afecta ni es afectado por la posición de otros elementos.
+    - position: fixed // Es una variante del posicionamiento absoluto.
+                         Convierte un elemento en inamovible y que siempre estará visible en la web.
+
+
+
+•ELEMENTOS FLOTANTES
+- Este tipo de posicionamiento es uno de los más usados y a la vez más complejos.
+- Cuando un elemento lo definimos como flotante, automáticamente se desplaza de su posición original hacia su izquierda o su derecha.
+- Un elemento flotante deja de pertenecer al flujo normal de la web, por lo cual otra caja puede ocupar su lugar (los elementos pueden colapsar)
+<style>
+    element {float: left} // Que aparezcan a la izquierda.
+    element {float: right} // Que aparezcan a la derecha.
+</style>
+- Uno de los principales motivos de la aparición de float fue poder colocar imágenes alrededor de texto.
+
+
+•CLEAR: LEFT | RIGHT | BOTH
+- La propiedad clear es importante para controlar el comportamiento de los elementos flotantes.
+- Nos permite despejar los elementos flotantes que se encuentran en un lado, en otro o en los dos, y así evitar posibles superposiciones.
+
+
+•CLEARFIX
+- Cuando usamos elementos flotantes a veces no son capaces de resolver la altura del elemento y puede crear un efecto extraño.
+- Hay muchos tipos diferentes de hack llamado "clearfix".
+
+
+•GRID DE COLUMNAS
+- Nos va a permitir definir nuestro layout mediante un sistema de filas y columnas.
+- Todas ellas se encontrarán dentro de un contenedor.
+- Nuestro contenido irá distribuido dentro de las columnas.
+
+
+•BOX-SIZING
+<style>
+    * {box-sizing: border-box;
+        -webkit-box-sizing: border-box;}
+        -moz-box-sizing: border-box;
+</style>
+- Con esto coseguimos que el padding y el border de un elemento estén incluidos en la anchura y altura de un elemento.
+
+
+•CALC()
+<style>
+    element {width: calc(100% - 100px} // calcula lo que mide el 100% de la pantalla y quitale al total, 100 píxeles.
+</style>
+- calc() nos va a permitir realizar cálculos para determinar valores de propiedades CSS.
+- Se puede anidar unas llamas a clac() dentro de otras.
+- Podemos utilizar los siguientes operadores: +, -, *, /.
+
+
+
+•PARA HACER UN MOVIMIENTO
+HTML
+<div class="aux"></div>
+CSS
+div {
+    height: 200px;
+    widht: 200px;
+    background: orange;
+    border: 2px solid black;
+    margin: 50 px;
+    transition-property: all;
+    transition-duration: 5s;
+    transition-timing-function: ease-in out;
+                                ease;           // Al final frena.
+                                ease-in;        // Al principio va lento.
+                                ease-out;       // Al final va lento.
+                                ease-in-out;    // Al principio y al final va lento.
+}
+
+.aux:hover {
+    transform: rotate(90deg) skew(20deg); //Aquí podemos poner también translate, etc.
+    background: green;
+}
+
+*/
+
+
+* {
+    /*font-family: 'bodoni-svtytwo-itc-tt-book-59f3880a71f7d';*/
+    /*font-family: 'Cinzel-black';
+    font-family: 'Cinzel-Bold';
+    font-family: 'Cinzel-Regular';*/
+    /*font-family: 'Pacifico-Regular';*/
+    /*font-family: 'Parisienne-Regular';*/
+
+    box-sizing: border-box; /*Si no lo ponemos el elemento sobresale si le damos margen o padin.
+    Es para que se ajusten las medidas bien.*/
+}
+
+@font-face {
+    font-family: Title;
+    src: url(../fonts/bodoni-svtytwo-itc-tt-book-59f3880a71f7d.ttf);  
+}
+@font-face {
+    font-family: Title1;
+    src: url(../fonts/BadScript-Regular.ttf);
+}
+@font-face {
+    font-family: Title2;
+    src: url(../fonts/GreatVibes-Regular.ttf);
+}
+
+
+
+.header > .title {
+    position: fixed;
+    padding-right: 9px;
+    top: 68%;
+    width: 100%;
+    text-align: right;
+    font-size: 136px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: Title;    
+}
+
+
+.header video { /*Entro dentro de header y dentro en video, solo así puedo cambiar las características del video*/
+    /*Con los siguientes parámetros indico que quiero que el video esté en toda la pantalla, pero de fondo.*/
+
+/*.header title-video o title-video-completo // MUCHO CUIDADO, si ponemos esto, todo lo que tendgamos escrito a parte
+del video, no se nos mostrará encima del video, sino que tendrán sus cajones con el color correspondiente, en su
+defecto, el color blanco, junto con sus márgenes, etc.*/
+    background-size: auto;
+    bottom: 0;
+    height: auto;
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
+    right: 0;
+    width: auto;
+    z-index: -100;
+}
+/* CUIDADO QUE DA ERROR AL PONERLO EN LA PÁGINA QUIEN SOY, Y NO SE SI EN ALGO*/
+.clearfix:after {
+    content:"";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    --main-text-color: rgba(255, 255, 255, 0.3);
+    --secondary-text-color: rgba(201, 208, 252, 0.8);
+}
+
+
+/*Aquí empieza NAVBAR   -   INDEX*/
+
+.navbar-index {
+    background-color: var(--main-text-color);
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    z-index: 1;
+    right: 0px;
+    padding-right: 10px;
+}
+
+.navbar-index > .navbar-list {
+    list-style: none;
+    margin: 0;
+    float: center;
+    font-size: 0;
+}
+
+.navbar-index > .navbar-list > .navbar-item {
+    display: inline;
+    position: center;
+    font-size: 25px;
+}
+
+.navbar-index > .navbar-list > .navbar-item a {
+    padding: 50px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+    display: inline-block;
+    transition: all 0.5s linear;
+}
+
+.navbar-index > .navbar-list > .navbar-item.active a{
+    color: rgba(255, 255, 255, 0.7);
+    background-color: var(--secondary-text-color);
+}
+
+.navbar-index > .navbar-list > .navbar-item a:hover {
+    color: var(--main-text-color);
+    background-color: var(--secondary-text-color);
+}
+
+.footer-index {
+    position: fixed;
+    top: 1%;
+    width: 100%;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: Title;    
+    
+}
+
+
+/*Aquí empieza NAVBAR   -   QUIEN   -   SOY*/
+
+.navbar-quien-soy {
+    background-color: rgba(201, 208, 252, 0.2);
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    z-index: 1;
+    right: 0px;
+    padding-right: 10px;
+}
+
+.navbar-quien-soy > .navbar-list {
+    list-style: none;
+    margin: 0;
+    float: center;
+    font-size: 0;
+}
+
+.navbar-quien-soy > .navbar-list > .navbar-item {
+    display: inline;
+    position: center;
+    font-size: 18px;
+}
+
+.navbar-quien-soy > .navbar-list > .navbar-item a {
+    padding: 10px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    transition: all 0.5s linear;
+}
+
+.navbar-quien-soy > .navbar-list > .navbar-item.active a{
+    color: rgba(255, 255, 255, 0.8);
+    background-color: var(--secondary-text-color);
+}
+
+.navbar-quien-soy > .navbar-list > .navbar-item a:hover {
+    color: var(--main-text-color);
+    background-color: var(--secondary-text-color);
+}
+
+.footer-quien-soy {
+    position: fixed;
+    top: 1%;
+    width: 100%;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: Title;    
+    
+}
+
+
+/*Aquí empieza NAVBAR   -   DISEÑO  -   MODA*/
+
+.navbar-diseño-moda {
+    background-color: var(--main-text-color);
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+    right: 0px;
+    padding-right: 10px;
+}
+
+.navbar-diseño-moda > .navbar-list {
+    list-style: none;
+    margin: 0;
+    float: center;
+    font-size: 0;
+}
+
+.navbar-diseño-moda > .navbar-list > .navbar-item {
+    display: inline;
+    position: center;
+    font-size: 13px;
+}
+
+.navbar-diseño-moda > .navbar-list > .navbar-item a {
+    padding: 6px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    transition: all 0.5s linear;
+}
+
+.navbar-diseño-moda > .navbar-list > .navbar-item.active a{
+    color: var(--main-text-color);
+    background-color: var(--secondary-text-color);
+}
+
+.navbar-diseño-moda > .navbar-list > .navbar-item a:hover {
+    color: var(--main-text-color);
+    background-color: var(--secondary-text-color);
+}
+
+.footer-diseño-moda {
+    position: fixed;
+    top: 1%;
+    width: 100%;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: Title;  
+    
+}
+
+
+/*Aquí empieza NAVBAR   -   DISEÑO  -   MULTIMEDIA*/
+
+.navbar-diseño-multimedia {
+    background-color: white;
+    width: 29%;
+    position: fixed;
+    bottom: 0px;
+    z-index: 1;
+    right: 0px;
+    padding-right: 0px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    align-items: center;  
+    justify-content: center;
+}
+
+.navbar-diseño-multimedia > .navbar-list {
+    list-style: none;
+    margin: 0;
+    float: center;
+    font-size: 0;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    align-items: center;  
+    justify-content: center;
+    
+}
+
+.navbar-diseño-multimedia > .navbar-list > .navbar-item {
+    display: inline;
+    position: center;
+    font-size: 23.5px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    align-items: center;  
+    justify-content: center;
+    
+}
+
+.navbar-diseño-multimedia > .navbar-list > .navbar-item a {
+    padding: 45px;
+    text-decoration: none;
+    color: rgba(54, 54, 54, 0.6);
+    display: inline-block;
+    transition: all 0.5s linear;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    align-items: center;  
+    justify-content: center;
+}
+
+.navbar-diseño-multimedia > .navbar-list > .navbar-item.active a{
+    color: rgb(0, 0, 0, 0.5);
+    background-color: var(--secondary-text-color);
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    align-items: center;  
+    justify-content: center;
+}
+
+.navbar-diseño-multimedia > .navbar-list > .navbar-item a:hover {
+    color: var(--main-text-color);
+    background-color: var(--secondary-text-color);
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    align-items: center;  
+    justify-content: center;
+}
+
+.footer-diseño-multimedia {
+    position: fixed;
+    top: 1%;
+    width: 100%;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 11px;
+    color: rgba(7, 7, 7, 0.7);
+    font-family: Title;    
+    
+}
+
+
+/*Aquí empieza NAVBAR   -   CONTACT*/
+
+.navbar-contact {
+    background-color: rgba(201, 208, 252, 0.2);
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+    right: 0px;
+    padding-right: 10px;
+}
+
+.navbar-contact > .navbar-list {
+    list-style: none;
+    margin: 0;
+    float: center;
+    font-size: 0;
+}
+
+.navbar-contact > .navbar-list > .navbar-item {
+    display: inline;
+    position: center;
+    font-size: 15px;
+}
+
+.navbar-contact > .navbar-list > .navbar-item a {
+    padding: 15px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+    display: inline-block;
+    transition: all 0.5s linear;
+}
+
+.navbar-contact > .navbar-list > .navbar-item.active a{
+    color: rgba(255, 255, 255, 0.8);
+    background-color: var(--secondary-text-color);
+}
+
+.navbar-contact > .navbar-list > .navbar-item a:hover {
+    color: var(--main-text-color);
+    background-color: var(--secondary-text-color);
+}
+
+.footer-contact {
+    position: fixed;
+    top: 1%;
+    width: 100%;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 10px;
+    color: rgba(36, 36, 36, 0.5);
+    font-family: Title;    
+    
+}
+
+
+/*Aquí empieza NAVBAR   -   TASK*/
+
+.navbar-task {
+    background-color: rgba(201, 208, 252, 0.2);
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+    right: 0px;
+    padding-right: 10px;
+}
+
+.navbar-task > .navbar-list {
+    list-style: none;
+    margin: 0;
+    float: center;
+    font-size: 0;
+}
+
+.navbar-task > .navbar-list > .navbar-item {
+    display: inline;
+    position: center;
+    font-size: 15px;
+}
+
+.navbar-task > .navbar-list > .navbar-item a {
+    padding: 15px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+    display: inline-block;
+    transition: all 0.5s linear;
+}
+
+.navbar-task > .navbar-list > .navbar-item.active a{
+    color: rgba(255, 255, 255, 0.7);
+    background-color: var(--secondary-text-color);
+}
+
+.navbar-task > .navbar-list > .navbar-item a:hover {
+    color: var(--main-text-color);
+    background-color: var(--secondary-text-color);
+}
+
+.footer-task {
+    position: fixed;
+    bottom: 47%;
+    width: 100%;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 15px;
+    color: rgba(201, 208, 252, 0.8);
+    font-family: Title;   
+    
+}
+
+
+.title-img {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(../images/YO.jpg);
+    height: 68vw;
+    transition: background-size 0.5s;
+}
+
+.title-img:hover{
+    background-size: 120% 120%;
+}
+
+.title-title {
+    position: absolute;
+    top: 5%;
+    left: 2.5%;
+    width: 100%;
+    text-align: left;
+    font-size: 80px;
+    color: rgba(135, 147, 211, 0.8);
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+    font-family: Title;
+    z-index: 1;
+
+    animation: titleAnimation 2s forwards;
+    /*animation-delay: 0.8s;*/
+    visibility: hidden;
+}
+
+.title-cite {
+    position: absolute;
+    top: 38%;
+    left: 3%;
+    width: 40%;
+    text-align: left;
+    font-size: 21px;
+    color: rgba(201, 208, 252, 0.8);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    font-family: Title2;
+    opacity: 0;
+    animation: subtitleAnimation 3s forwards;
+    animation-delay: 1s;
+}
+.title-cite1 {
+    position: absolute;
+    top: 44%;
+    left: 3%;
+    width: 40%;
+    text-align: left;
+    font-size: 21px;
+    color: rgba(12, 5, 36, 0.6);
+    font-family: Title1;
+    opacity: 0;
+    animation: subtitleAnimation 3s forwards;
+    animation-delay: 1s;
+}
+.title-cite2 {
+    font-family: Title2;
+}
+@keyframes titleAnimation {
+    0% {
+        font-size: 200px;
+    }
+
+    50% {
+        font-size: 180px;
+    }
+
+    100% {
+        font-size: 100px;
+        visibility: visible;
+    }
+}
+
+@keyframes subtitleAnimation {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*SE HA TERMINADO   Q U I E N       S O Y*/
+
+.section-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.section-reverse {
+    /*background-color: rgba(0, 0, 0, 0.9);
+    color: var(--main-text-color);*/
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
+
+.team-member-photo img {
+    height: 300px;
+    max-width: 100%;
+    border-radius: 50%;
+    border: 6px dashed rgba(177, 121, 250, 0.4);
+}
+
+.container {
+    background-image: url('https://media.giphy.com/media/d97OPMEimWGBi/giphy.gif');
+    /*background-image: url('https://78.media.tumblr.com/4e7e32a4cd41c8861fb1dd586bcc8276/tumblr_nn69r6ZDRQ1uqirlwo1_500.gif');
+    background-image: url('https://static.tumblr.com/c1a3de323a967d96e8ca238eaeac2e6c/gere0ek/Mgvonyzf2/tumblr_static_tumblr_static_3jalp32tft6osow8wos4ws04s_640.gif');
+    background-image: url('https://2.bp.blogspot.com/-QWV-YIUdXgU/V7CSvI1DNmI/AAAAAAAFymQ/ea9APEjx32MlFilCtxCbEAEwYtRKaNG5gCLcB/s1600/EFECTOS%2B%2528536%2529.gif');*/
+    background-size: 100%;
+    bottom: 0;
+    height: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    right: 0;
+    width: 100%;
+    z-index: -100;
+    /*¡¡¡¡¡¡¡¡¡¡MUCHISIMO C U I D A D O CON ESTO!!!!!!!!!!!!!
+    Para poder poner un fondo sobre otro sin que nos altere las posiciones de los demás elementos, e incluso las animaciones,
+    tenemos que tener en cuenta que la posición que le pongamos varía todo y que aunque podamos poner más de una tenemos
+    que tener en cuenta la preferencia de lectura del lenguaje, y la preferencia a la hora de colocarlo, además de tener
+    en cuenta, lo que respeta y lo que no dicha posición.*/
+    position: absolute;
+    position: static;
+    background-image: rgba(0, 0, 0, 0.5);
+}
+
+.bio {
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 50px;
+    margin-right: 50px;
+    font-family: Title1;   
+}
+
+.team-member {
+    color: rgba(255, 255, 255, 0.9);
+    margin-left: 5%;
+    font-family: Title;
+}
+
+.real-name {
+    color: rgba(255, 255, 255, 0.9);
+    font-family: Title2;
+}
+
+.name {
+    color: rgba(201, 208, 252, 0.9);
+    text-shadow: 1px 2px 8px white;
+    /*color: rgba(255, 255, 255, 0.9);*/
+    font-family: Title;
+}
+
+.position {
+    color: rgba(255, 255, 255, 0.9);
+    font-family: Title1;
+}
+
+.c {
+    font-style: italic;
+}
+
+/*M E R Y   T U R I E L    S O L E R*/
+
+.mery {
+    height: 305px;
+    position: relative;
+}
+
+.mery-img {
+    cursor: pointer;
+    position: absolute;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: transform 1s;
+}
+
+.back {
+    transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+}
+
+.mery:hover .front {
+    transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+}
+
+.mery:hover .back {
+    transform: rotateY(0);
+    -webkit-transform: rotateY(0);
+}
+
+/*S H A Y   M I T C H E L L*/
+
+.shay {
+    height: 305px;
+    position: relative;
+}
+
+.shay-img {
+    cursor: pointer;
+    position: absolute;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: transform 1s;
+}
+
+.back {
+    transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+}
+
+.shay:hover .front {
+    transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+}
+
+.shay:hover .back {
+    transform: rotateY(0);
+    -webkit-transform: rotateY(0);
+}
+
+/*G I G I   H A D I D*/
+
+.gigi {
+    height: 305px;
+    position: relative;
+}
+
+.gigi-img {
+    cursor: pointer;
+    position: absolute;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: transform 1s;
+}
+
+.back {
+    transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+}
+
+.gigi:hover .front {
+    transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+}
+
+.gigi:hover .back {
+    transform: rotateY(0);
+    -webkit-transform: rotateY(0);
+}
+
+/*SE HA TERMINADO       D I S E Ñ O     D E     M O D A*/
+
+.DMultimedia {
+    background-image: url('https://media.giphy.com/media/ynQMuUwzpyP8A/giphy.gif');
+    position: fixed;
+}
+
+.row-flex {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.movil-img {
+    max-width: 400%;
+    height: 300px;
+    border-radius: 10%;
+}
+
+.movil-item {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex: 1;
+}
+
+.movil-info {
+    align-self: flex-end;
+}
+
+.diseño-img {
+    max-width: 400%;
+    height: 330px;
+    border-radius: 10%;
+}
+
+.diseño-item {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex: 1;
+}
+
+.diseño-info {
+    align-self: flex-end;
+}
+
+.footer {
+    background-color: rgb(0, 0, 0);
+    color: var(--main-text-color);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*SE HA TERMINADO       D I S E Ñ O     M U L T I M E D I A*/
+
+.Con {
+    margin-left: 40px;
+}
+
+table {
+    cursor: pointer;
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Title;
+}
+
+thead > tr {
+    background-color: rgba(201, 208, 252, 0.9);
+    font-family: Title2;
+}
+
+th {
+    height: 50px;
+}
+
+th, td {
+    padding: 8px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+tbody > tr:hover {
+    background-color:rgba(52, 7, 189, 0.13);
+}
+
+#googleMap {
+    height: 400px;
+}
+
+.form {
+    padding: 0 20px;
+}
+
+.form .form-row {
+    padding: 10px;
+}
+
+input {
+    margin-left: 30px;
+    font-family: Title1;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[disabled] {
+    margin-left: 30px;
+    font-family: Title;
+    opacity: 0.5;
+}
+
+input[type=button], input[type=submit], button {
+    margin-left: 30px;
+    font-family: Title;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 0px;
+}
+
+/*SE HA TERMINADO   C O N T A C T*/
+
+.conta {
+    margin-left: 30px;
+}
+
+.tarea {
+    font-family: Title;
+    color: white;
+}
+
+.tarea1 {
+    font-family: Title1;
+    color: white;
+}
+
+.tarea2 {
+    font-family: Title2;
+    color: white;
+}
+
+/*SE HA TERMINADO    T A S K*/

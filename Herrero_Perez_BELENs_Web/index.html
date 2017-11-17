@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <link rel="stylesheet" href="text/css" href="./styles/grid.css">
+    <!--<link rel="stylesheet" href="Aquí pondría la url para coger/importar la fuente de internet que quisiese">-->
+    <title>MONDAY MOOD</title>
+</head>
+
+<body>
+    <header class="header"> <!--Cabecera--> <!--creamos una clase, que tiene un atributo, para luego porder movificarlo-->
+        <h1 class="title">M O N D A Y  M O O D</h1>
+        <h2 class="title-video" id="title-video-completo">
+            <video preload autoplay> <!--Le digo que se reprodudca automaticamente-->
+                <source src="./video/1080.mp4" type="video/mp4"> <!--Dirección del video y el tipo, no es necesario poner el tipo, pero es mejor ponerlo-->
+            </video>
+        </h2>
+        <!--<img src="./images/DG2.jpg" alt="DG2"> Mejor lo ponemos en el css para poder hacer mas cosas de diseño-->
+        <!--<div id="title-image-animated" class="title-img"></div>-->
+    </header>
+
+    <nav class="navbar-index"> <!--Estructura de navegación de la página-->
+        <ul class="navbar-list"> <!--Lista desordenada-->
+            <li class="navbar-item active"> <!--Items de la lista--> <!--Tiene dos clases, dependerá si la llamamos "navbar-item" o "navbar-item active-->
+                <a href="#">I N I C I O</a> <!--Links, a donde quiero ir--> <!--"#" esto es para personalizar, es un identificador-->
+            </li>
+            <li class="navbar-item"> 
+                <a href="quien-soy.html">Quien Soy</a> 
+            </li>
+            <li class="navbar-item">
+                <a href="diseño-moda.html">Diseño de Moda</a> 
+            </li>
+            <li class="navbar-item"> 
+                <a href="diseño-multimedia.html">Diseño Multimedia</a> 
+            </li>
+            <li class="navbar-item">
+                <a href="contact.html">Contacto</a> <!--Para ir a otra pagina, donde están los contactos-->
+            </li>
+            <li class="navbar-item"> 
+                <a href="task.html">Tareas</a> 
+            </li>
+        </ul>
+    </nav>
+
+    <footer class="footer-index"> <!--Abajo del todo, final-->
+        <!--Información final-->
+        <strong>
+            <small>BELÉN HERRERO PÉREZ &copy; - P r o g r a m a d o r a / D i s e ñ a d o r a  G r á f i c a  y  A r t í s t i c a  •  Bellas  Artes</small>
+        </strong>
+    </footer>
+
+</body>
+
+</html>

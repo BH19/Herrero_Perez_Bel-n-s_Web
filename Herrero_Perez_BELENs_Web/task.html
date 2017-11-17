@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <link rel="stylesheet" href="text/css" href="./styles/grid.css">
+    <title>TAREAS</title>
+</head>
+
+<body>
+    <nav class="navbar-task"> <!--Estructura de navegación de la página-->
+        <ul class="navbar-list"> <!--Lista desordenada-->
+            <li class="navbar-item"> <!--Items de la lista--> <!--Tiene dos clases, dependerá si la llamamos "navbar-item" o "navbar-item active-->
+                <a href="index.html">Inicio</a> <!--Links, a donde quiero ir--> <!--"#" esto es para personalizar, es un identificador-->
+            </li>
+            <li class="navbar-item"> 
+                <a href="quien-soy.html">Quien soy</a> 
+            </li>
+            <li class="navbar-item">
+                <a href="diseño-moda.html">Diseño de Moda</a> 
+            </li>
+            <li class="navbar-item"> 
+                <a href="diseño-multimedia.html">Diseño Multimedia</a> 
+            </li>
+            <li class="navbar-item">
+                <a href="contact.html">Contacto</a> <!--Para ir a otra pagina, donde están los contactos-->
+            </li>
+            <li class="navbar-item active"> 
+                <a href="task.html">T A R E A S</a> 
+            </li>
+        </ul>
+    </nav>
+
+
+    <div class="container">
+        <section class="row section-container">
+            <h2 class="tarea conta">Tareas</h2> <!--Título-->
+    
+            <div class="col-6"> <!--Añadir nuevas Tareas donde podamos escribirlas y enviarlas-->
+                <h3 class="tarea1 conta">Añadir nueva tarea</h3>
+                <form>
+                    <input type="text" id="newTaskName" name="name" placeholder="Nueva tarea..." required>
+                    <br> <!--Es una etiqueta para dejar espacios.-->
+                    <br>
+                    <button id="sendNewTask conta" >Enviar</button>
+                </form>
+            </div>
+        
+
+            <div class="col-6"> <!--Las tareas que enviamos se envian aquí y se quedan como tareas pendientes-->
+                <h3 class="tarea2 conta">Tareas pendientes</h3>
+                <div class="loader"></div> <!--Metemos dentro las tareas que se van escribiendo anteriormente-->
+                <div>
+                    <ul id="taskContainer conta"> <!--Lista ordenada de los items que vayamos escribiendo-->
+                    
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer class="footer-task"> <!--Abajo del todo, final-->
+        <!--Información final-->
+        <strong>
+            <small>BELÉN HERRERO PÉREZ &copy; - PROGRAMADORA/DISEÑADORA GRÁFICA Y ARTÍSTICA - BBAA</small>
+        </strong>
+    </footer>
+</body>
+<script src="js/ajax.js"></script>
+</html>
